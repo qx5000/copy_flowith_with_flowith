@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 本地部署平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-white">
+    <div class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="text-center mb-16">
+            <div class="flex items-center justify-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+                    <i class="fas fa-robot text-2xl text-white"></i>
+                </div>
+                <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                    AI Agent 本地部署平台
+                </h1>
+            </div>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                基于 Flowith 理念的本地化 AI Agent 系统，支持画布式多智能体协作、知识库管理和工作流编排
+            </p>
+        </header>
+
+        <!-- Quick Start -->
+        <section class="mb-16">
+            <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+                <h2 class="text-3xl font-bold mb-6 text-center">
+                    <i class="fas fa-rocket mr-3 text-blue-500"></i>
+                    快速开始
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-blue-400 mb-4">
+                            <i class="fas fa-docker mr-2"></i>
+                            Docker 部署 (推荐)
+                        </h3>
+                        <div class="bg-slate-900/50 rounded-lg p-4 font-mono text-sm">
+                            <div class="text-green-400 mb-2"># 克隆项目</div>
+                            <div class="text-gray-300">git clone https://github.com/your-repo/ai-agent-platform.git</div>
+                            <div class="text-gray-300 mt-2">cd ai-agent-platform</div>
+                            
+                            <div class="text-green-400 mb-2 mt-4"># 配置环境变量</div>
+                            <div class="text-gray-300">cp .env.example .env</div>
+                            
+                            <div class="text-green-400 mb-2 mt-4"># 启动服务</div>
+                            <div class="text-gray-300">docker-compose up --build -d</div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-purple-400 mb-4">
+                            <i class="fas fa-cog mr-2"></i>
+                            系统要求
+                        </h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center">
+                                <i class="fas fa-memory text-blue-500 mr-3 w-4"></i>
+                                内存: 16GB+ (推荐 32GB)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-microchip text-green-500 mr-3 w-4"></i>
+                                GPU: NVIDIA (8GB+ 显存)
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-hdd text-yellow-500 mr-3 w-4"></i>
+                                存储: 50GB+ SSD
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-desktop text-purple-500 mr-3 w-4"></i>
+                                系统: Docker 支持
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <i class="fas fa-star mr-3 text-yellow-500"></i>
+                核心特性
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Canvas Interface -->
+                <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-blue-500 transition-colors">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-project-diagram text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-blue-400">画布式交互</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        基于 React Flow 的二维无限画布，支持节点拖拽、连接、参数配置，直观展现 AI 工作流程
+                    </p>
+                </div>
+
+                <!-- Multi-Agent -->
+                <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-purple-500 transition-colors">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-purple-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-400">多智能体协作</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        基于 CrewAI + LangGraph 的多 Agent 协同，支持角色定义、任务分工和并行执行
+                    </p>
+                </div>
+
+                <!-- Knowledge Base -->
+                <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-green-500 transition-colors">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-database text-green-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-green-400">知识库管理</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        集成 ChromaDB 向量数据库，支持文档上传、自动处理、语义检索和 RAG 增强生成
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <i class="fas fa-sitemap mr-3 text-green-500"></i>
+                技术架构
+            </h2>
+            <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-400 mb-4">
+                            <i class="fas fa-server mr-2"></i>
+                            后端技术栈
+                        </h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Python + FastAPI</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>LangGraph + CrewAI</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>PostgreSQL + ChromaDB</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Redis + WebSocket</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Ollama + LiteLLM</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-purple-400 mb-4">
+                            <i class="fas fa-desktop mr-2"></i>
+                            前端技术栈
+                        </h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>React + Tailwind CSS</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>React Flow 画布</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Zustand 状态管理</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>WebSocket 实时通信</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>响应式设计</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Access Links -->
+        <section class="text-center">
+            <h2 class="text-3xl font-bold mb-8">
+                <i class="fas fa-external-link-alt mr-3 text-blue-500"></i>
+                访问入口
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <a href="frontend/dist/index.html" 
+                   class="block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl p-6 transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-paint-brush text-2xl mb-3"></i>
+                    <div class="font-semibold text-lg">前端界面</div>
+                    <div class="text-sm opacity-90">React 画布界面</div>
+                </a>
+                <div class="bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl p-6">
+                    <i class="fas fa-server text-2xl mb-3"></i>
+                    <div class="font-semibold text-lg">后端 API</div>
+                    <div class="text-sm opacity-90">启动后访问 :8000</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 pt-8 border-t border-slate-700">
+            <p class="text-gray-400">
+                <i class="fas fa-code mr-2"></i>
+                基于《AI Agent本地部署项目综合报告》构建 | 
+                <i class="fas fa-heart text-red-500 mx-2"></i>
+                开源项目
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

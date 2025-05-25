@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* React Flow 自定义样式 */
+  .react-flow__node {
+    @apply font-sans;
+  }
+  
+  .react-flow__edge-path {
+    @apply stroke-2;
+  }
+  
+  .react-flow__edge.selected .react-flow__edge-path {
+    @apply stroke-blue-500;
+  }
+  
+  .react-flow__handle {
+    @apply border-2 border-white;
+  }
+  
+  .react-flow__handle:hover {
+    @apply scale-110;
+  }
+  
+  .react-flow__minimap {
+    @apply bg-white border border-gray-200 rounded-lg;
+  }
+  
+  .react-flow__controls {
+    @apply bg-white border border-gray-200 rounded-lg;
+  }
+  
+  .react-flow__controls-button {
+    @apply bg-white border-b border-gray-200 hover:bg-gray-50;
+  }
+  
+  .react-flow__controls-button:last-child {
+    @apply border-b-0;
+  }
+  
+  /* 自定义按钮样式 */
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors;
+  }
+  
+  /* 输入框样式 */
+  .input-primary {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors;
+  }
+  
+  /* 卡片样式 */
+  .card {
+    @apply bg-white rounded-lg border border-gray-200 shadow-sm p-6;
+  }
+  
+  .card-header {
+    @apply border-b border-gray-200 pb-4 mb-4;
+  }
+  
+  /* 状态指示器 */
+  .status-indicator {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .status-indicator.success {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .status-indicator.warning {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .status-indicator.error {
+    @apply bg-red-100 text-red-800;
+  }
+  
+  .status-indicator.info {
+    @apply bg-blue-100 text-blue-800;
+  }
+  
+  /* 加载动画 */
+  .spinner {
+    @apply animate-spin rounded-full border-2 border-gray-200 border-t-blue-600;
+  }
+  
+  /* 工具栏样式 */
+  .toolbar {
+    @apply bg-white border border-gray-200 rounded-lg shadow-sm p-2 flex items-center space-x-2;
+  }
+  
+  .toolbar-button {
+    @apply p-2 rounded hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors;
+  }
+  
+  .toolbar-button.active {
+    @apply bg-blue-100 text-blue-600;
+  }
+  
+  /* 面板样式 */
+  .panel {
+    @apply bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden;
+  }
+  
+  .panel-header {
+    @apply bg-gray-50 px-4 py-3 border-b border-gray-200 font-medium text-gray-900;
+  }
+  
+  .panel-body {
+    @apply p-4;
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .container {
+      @apply px-4;
+    }
+    
+    .grid {
+      @apply grid-cols-1 !important;
+    }
+    
+    .flex {
+      @apply flex-col !important;
+    }
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s infinite;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 选择文本样式 */
+::selection {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* 工具提示样式 */
+.tooltip {
+  @apply absolute z-50 px-2 py-1 text-xs text-white bg-gray-900 rounded shadow-lg;
+}
+
+/* 模态框样式 */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-40;
+}
+
+.modal-content {
+  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl z-50;
+}
+
+/* 错误页面样式 */
+.error-page {
+  @apply min-h-screen flex items-center justify-center bg-gray-50;
+}
+
+/* 加载页面样式 */
+.loading-page {
+  @apply min-h-screen flex items-center justify-center bg-gray-50;
+}
+
+.loading-spinner {
+  @apply w-8 h-8 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin;
+}
